@@ -26,7 +26,7 @@ public class UserDAO {
 		return instance;
 	}
 	
-	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String url = "jdbc:oracle:thin:@172.30.1.22:1521:xe";
 	private String uid = "JSP1";
 	private String upw = "JSP1";
 	
