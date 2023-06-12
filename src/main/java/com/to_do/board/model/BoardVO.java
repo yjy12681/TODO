@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class BoardVO {
 	private int bno;
-	private String user_Id;
+	private String user_id;
 	private String title;
 	private String content;
 	private String check_yn;
@@ -16,10 +16,10 @@ public class BoardVO {
 		
 	}
 
-	public BoardVO(int bno, String user_Id, String title, String content, String check_yn, Timestamp regdate) {
+	public BoardVO(int bno, String user_id, String title, String content, String check_yn, Timestamp regdate) {
 		super();
 		this.bno = bno;
-		this.user_Id = user_Id;
+		this.user_id = user_id;
 		this.title = title;
 		this.content = content;
 		this.check_yn = check_yn;
@@ -28,11 +28,11 @@ public class BoardVO {
 	
 	
 
-	public BoardVO(int bno, String user_Id, String title, String content, String check_yn, Timestamp regdate,
+	public BoardVO(int bno, String user_id, String title, String content, String check_yn, Timestamp regdate,
 			int nTotal) {
 		super();
 		this.bno = bno;
-		this.user_Id = user_Id;
+		this.user_id = user_id;
 		this.title = title;
 		this.content = content;
 		this.check_yn = check_yn;
@@ -48,12 +48,12 @@ public class BoardVO {
 		this.bno = bno;
 	}
 
-	public String getUser_Id() {
-		return user_Id;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setUser_Id(String user_Id) {
-		this.user_Id = user_Id;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getTitle() {
@@ -96,10 +96,6 @@ public class BoardVO {
 		this.nTotal = nTotal;
 	}
 
-	
-	
-	
-	
-	
+
 	
 }

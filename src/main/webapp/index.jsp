@@ -25,11 +25,12 @@
 	<table class="table table-bordered">
 		<thead>
 			<tr>
-				<th>글 번호</th>
 				<th>제목</th>
 				<th>내용</th>
 				<th>달성여부?</th>
 				<th>등록일</th>
+				<th>수정</th>
+				<th>삭제</th>
 			</tr>
 		</thead>
 
@@ -37,11 +38,12 @@
 			<c:forEach var="vo" items="${list}" varStatus="x">
 				<tr>
 					<td><a href="board_content.board?bno=${vo.bno}">${vo.title}</a></td>
-					<td>${vo.title}</td>
 					<td>${vo.content}</td>
 					<td>${vo.check_yn}</td>
 					<td><fmt:formatDate value="${vo.regdate}"
 							pattern="yyyy-MM-dd (E) hh시mm분" /></td>
+					<td><a href="../board/board_modify.board?bno=${ vo.bno }">수정</a></td>
+					<td><a href="../board/board_delete.board?bno=${ vo.bno }">삭제</a> </td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -54,7 +56,7 @@
 
 
 							<input type="button" value="글 작성" class="btn btn-default"
-								onclick="location.href='board_write.board'">
+								onclick="location.href='/board/board_write.board'">
 						</div>
 					</form>
 				</td>
