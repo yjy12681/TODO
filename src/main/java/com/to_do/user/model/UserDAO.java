@@ -31,8 +31,10 @@ public class UserDAO {
 	private String upw = "JSP1";
 	
 	public int idCheck(String id) {//아이디 중복확인 메서드
+
 		int result = 1;			
 		String sql = "SELECT * FROM USERS WHERE ID = ?";
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -43,10 +45,12 @@ public class UserDAO {
 			pstmt.setString(1, id);
 			
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {//중복 o
-				result = 1;				
-			}else {//중복 x
+
+			// 아이디 검색 되면 결과 1
+			if(rs.next()) {
+				result = 1;
+			// 아이디 검색 안 되면 결과 0
+			}else {
 				result = 0;
 			}
 		} catch (Exception e) {
@@ -63,11 +67,11 @@ public class UserDAO {
 		}
 		
 		return result;
-	}
-	
-	
-	public void join(UserVO vo) { //회원가입 메서드
-		String sql = "INSERT INTO USERS(ID,PW,NAME,PHONENUMBER,BIRTHDATE,EMAIL) VALUES(?,?,?,?,?,?)";
+	} // IDCHECK 끝
+
+	//회원가입 메서드
+	public void join(UserVO vo) { 
+		String sql = "INSERT INTO USERS VALUES(?,?,?,?,?)";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -80,8 +84,7 @@ public class UserDAO {
 			pstmt.setString(2, vo.getPw());
 			pstmt.setString(3, vo.getName());
 			pstmt.setString(4, vo.getPhoneNumber());
-			pstmt.setTimestamp(5, vo.getBirthdate());
-			pstmt.setString(6, vo.getEmail());
+			pstmt.setString(5, vo.getEmail());
 			
 			pstmt.executeUpdate();
 			
@@ -97,12 +100,10 @@ public class UserDAO {
 			}
 		}
 		
-		
-		
-	}
+	} // JOIN 끝
 
-
-	public UserVO login(String id, String pw) {//로그인 기능 메서드
+	//로그인 기능 메서드
+	public UserVO login(String id, String pw) {
 		UserVO vo = null;
 		String sql = "SELECT * FROM USERS WHERE ID = ? AND PW = ?";
 		
@@ -121,10 +122,9 @@ public class UserDAO {
 				String id2 = rs.getString("ID");
 				String name = rs.getString("NAME");
 				String phoneNumber = rs.getString("PHONENUMBER");
-				Timestamp birthdate = rs.getTimestamp("BIRTHDATE");
 				String email = rs.getString("EMAIL");
 				
-				vo = new UserVO(id2,null,name,phoneNumber,birthdate,email);
+				vo = new UserVO(id2,null,name,phoneNumber,email);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -139,9 +139,10 @@ public class UserDAO {
 			}
 		}
 		return vo;
-	}
+	} //login끝
 
-	public UserVO getInfo(String id) {//로그인한 아이디 기반으로 정보를 가져오는 메서드
+	//id기반 정보 가져오은 메서드
+	public UserVO getInfo(String id) {
 		UserVO vo = null;
 		
 		String sql = "SELECT * FROM USERS WHERE ID = ?";
@@ -160,10 +161,9 @@ public class UserDAO {
 				String id2 = rs.getString("ID");
 				String name = rs.getString("NAME");
 				String phoneNumber = rs.getString("PHONENUMBER");
-				Timestamp birthdate = rs.getTimestamp("birthdate");
 				String email = rs.getString("EMAIL");
 				
-				vo = new UserVO(id2,null,name,phoneNumber,birthdate,email);
+				vo = new UserVO(id2,null,name,phoneNumber,email);
 				
 			}
 		} catch (Exception e) {
@@ -179,11 +179,12 @@ public class UserDAO {
 			}
 		}
 		return vo;
-	}
-
-	public int updateInfo(UserVO vo) { //회원정보 수정 메서드
+	} // getInfo 끝
+	
+	// 회원 정보 수정
+	public int updateInfo(UserVO vo) { 
 		int result = 0;
-		String sql = "UPDATE USERS SET PW =?,NAME = ?,PHONENUMBER = ?, BIRTHDATE = ?, EMAIL = ? WHERE ID = ? ";
+		String sql = "UPDATE USERS SET PW =?,NAME = ?,PHONENUMBER = ?, EMAIL = ? WHERE ID = ? ";
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -195,11 +196,11 @@ public class UserDAO {
 			pstmt.setString(1, vo.getPw());
 			pstmt.setString(2, vo.getName());
 			pstmt.setString(3, vo.getPhoneNumber());
-			pstmt.setTimestamp(4, vo.getBirthdate());
-			pstmt.setString(5, vo.getEmail());
-			pstmt.setString(6, vo.getId());
+			pstmt.setString(4, vo.getEmail());
+			pstmt.setString(5, vo.getId());
 			
 			result = pstmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -212,8 +213,9 @@ public class UserDAO {
 			}
 		}
 		return result;
-	}
+	} //updateInfo 끝
 
+	// 회원 탈퇴
 	public int deleteInfo(String id) {
 		int result = 0;
 		String sql = "DELETE FROM USERS WHERE ID = ?";

@@ -1,26 +1,22 @@
 package com.to_do.user.model;
 
-import java.sql.Timestamp;
-
 public class UserVO {
 	private String id;
 	private String pw;
 	private String name;
 	private String phoneNumber;
-	private Timestamp birthdate;
 	private String email;
 	
 	public UserVO() {
 		
 	}
 
-	public UserVO(String id, String pw, String name, String phoneNumber, Timestamp birthdate, String email) {
+	public UserVO(String id, String pw, String name, String phoneNumber,  String email) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
-		this.birthdate = birthdate;
 		this.email = email;
 	}
 
@@ -54,14 +50,6 @@ public class UserVO {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}
-
-	public Timestamp getBirthdate() {
-		return birthdate;
-	}
-
-	public void setBirthdate(Timestamp birthdate) {
-		this.birthdate = birthdate;
 	}
 
 	public String getEmail() {

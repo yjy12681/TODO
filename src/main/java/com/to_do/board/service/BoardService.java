@@ -18,9 +18,9 @@ public interface BoardService {
 	BoardVO getContent(HttpServletRequest request, HttpServletResponse response); // 임시 컨텐츠 가져오기
 
 	List<BoardVO> getList(HttpServletRequest request, HttpServletResponse response);
-	
-	List<BoardVO> getList(String id);
-	
+
+	List<BoardVO> getOverList(HttpServletRequest request, HttpServletResponse response);
+
 	int getCount(String id);
 	
 	int getCount1(String id);

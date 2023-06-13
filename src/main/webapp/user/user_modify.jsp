@@ -8,6 +8,7 @@
 	<div align="center">
 		<h3>회원정보 수정</h3>
 		<b>${sessionScope.user_name }님의 회원 정보를 수정합니다.</b>
+
 		<form action="user_update.user" method="post">
 			<table border="1">
 				<tr>
@@ -27,19 +28,13 @@
 					<td><input type="text" name="phoneNumber" value="${vo.phoneNumber }"></td>
 				</tr>
 				<tr>
-					<td>생년월일</td>
-					<td><input type="date" name="birthdate" value="${fn:substring(vo.birthdate,0,10)}"></td>
-				</tr>
-				<tr>
 					<td>이메일</td>
 					<td><input type="email" name="email" value="${vo.email }" ></td>
 				</tr>
 				
 				
 			</table>
-			
-			
-			
+
 			<input type="submit" value="수정">
 			<input type="button" value="회원페이지로 가기" onclick="location.href='user_mypage.user'">
 		

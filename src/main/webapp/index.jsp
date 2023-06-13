@@ -1,72 +1,63 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ include file="../include/header.jsp"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ include file="../include/header.jsp" %>
 
- <div class="container">
- 
-	<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th style="width: 100px;">미달성갯수: ${count }</th>
-			<th style="width: 10px;">달성갯수: ${count1 }</th>
-		</tr>
-	</thead>
-</table>
- </div>
-
-
-<div class="container">
-	<h3>List</h3><br>
-	
-	
-
-
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>제목</th>
-				<th>내용</th>
-				<th>달성여부?</th>
-				<th>등록일</th>
-				<th>수정</th>
-				<th>삭제</th>
-			</tr>
-		</thead>
-
-		<tbody>
-			<c:forEach var="vo" items="${list}" varStatus="x">
-				<tr>
-					<td><a href="board_content.board?bno=${vo.bno}">${vo.title}</a></td>
-					<td>${vo.content}</td>
-					<td>${vo.check_yn}</td>
-					<td><fmt:formatDate value="${vo.regdate}"
-							pattern="yyyy-MM-dd (E) hh시mm분" /></td>
-					<td><a href="../board/board_modify.board?bno=${ vo.bno }">수정</a></td>
-					<td><a href="../board/board_delete.board?bno=${ vo.bno }">삭제</a> </td>
-				</tr>
-			</c:forEach>
-		</tbody>
-
-		<tbody>
-			<tr>
-				<td colspan="6" align="right">
-					<form action="" class="form-inline">
-						<div class="form-group">
-
-
-							<input type="button" value="글 작성" class="btn btn-default"
-								onclick="location.href='/board/board_write.board'">
-						</div>
-					</form>
-				</td>
-			</tr>
-		</tbody>
-
-
-	</table>
+<div style="display: flex; justify-content: center;">
+    <div style="margin-right: 100px;">
+        <!-- 첫 번째 리스트 -->
+        <table class="table table-bordered">
+            <h3>할 일</h3>
+            <thead>
+            <tr>
+                <th>제목</th>
+                <th>내용</th>
+                <th>내용</th>
+                <th>내용</th>
+                <th>내용</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- 첫 번째 리스트의 항목들 -->
+            <tr>
+                <td>리스트 항목 1</td>
+                <td>리스트 항목 2</td>
+                <td>리스트 항목 3</td>
+                <td>리스트 항목 4</td>
+                <td>리스트 항목 5</td>
+            </tr>
+            <!-- 나머지 항목들 -->
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <!-- 두 번째 리스트 -->
+        <table class="table table-bordered">
+            <h3>마감기한 지난 일</h3>
+            <thead>
+            <tr>
+                <th>리스트 항목 A</th>
+                <th>리스트 항목 B</th>
+                <th>리스트 항목 C</th>
+                <th>리스트 항목 D</th>
+                <th>리스트 항목 E</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- 두 번째 리스트의 항목들 -->
+            <tr>
+                <td>리스트 항목 1</td>
+                <td>리스트 항목 2</td>
+                <td>리스트 항목 3</td>
+                <td>리스트 항목 4</td>
+                <td>리스트 항목 5</td>
+            </tr>
+            <!-- 나머지 항목들 -->
+            </tbody>
+        </table>
+    </div>
 </div>
 
 
-<%@ include file="../include/footer.jsp"%>
+    <%@ include file="../include/footer.jsp" %>
 

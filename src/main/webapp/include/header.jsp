@@ -46,6 +46,7 @@
 	width: 100%;
 	z-index: 10;
 }
+
 </style>
 
 
@@ -74,11 +75,9 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 
-					<li><a href="<%= request.getContextPath()%>/index.user">홈</a>
+					<li><a href="<%= request.getContextPath()%>/home.board">홈</a>
 					</li>
-					<li><a href="<%= request.getContextPath()%>/member/member.jsp">Member</a>
-					</li>
-					<li><a href="<%= request.getContextPath()%>/board/board_list.board">할일작성하러가기</a></li>
+					<li><a href="<%= request.getContextPath()%>/board/board_write.board">할일작성하러가기</a></li>
 
 					<c:choose>
 						<c:when test="${sessionScope.user_id != null }">

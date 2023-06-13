@@ -165,49 +165,104 @@ public class BoardDAO {
 		return vo;
 	}
 
-	// 임시 목록
+	//할일 목록 조회
 	public List<BoardVO> getList(String id){
+
 		List<BoardVO> list = new ArrayList<>();
 
-		String sql = "SELECT * FROM BOARD WHERE USER_ID = ? ORDER BY BNO DESC";
+		String sql = "SELECT * FROM board\n" +
+				     "WHERE TO_DATE(regdate, 'yyyy-MM-dd') >= TO_DATE(SYSDATE, 'yyyy-MM-dd') \n" +
+				     "AND check_yn = 'N' AND user_id = ?";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+
 		ResultSet rs = null;
 
 		try {
-			conn = DriverManager.getConnection(url,uid,upw);
-			pstmt=conn.prepareStatement(sql);
+
+			conn = DriverManager.getConnection(url, uid, upw);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 
-			rs=pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 
 			while(rs.next()) {
-				int bno = rs.getInt("BNO");
-				String user_Id = rs.getString("USER_ID");
-				String title = rs.getString("TITLE");
-				String content = rs.getString("CONTENT");
-				String check_yn = rs.getString("CHECK_YN");
-				Timestamp regdate = rs.getTimestamp("REGDATE");
+				int bno = rs.getInt("bno");
+				String user_id = rs.getString("user_id");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String check_yn = rs.getString("check_yn");
+				Timestamp regdate = rs.getTimestamp("regdate");
 
-				BoardVO vo = new BoardVO(bno,user_Id,title,content,check_yn,regdate);
+				BoardVO vo = new BoardVO(bno, user_id, title, content, check_yn, regdate);
+
 				list.add(vo);
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
 				conn.close();
 				pstmt.close();
 				rs.close();
-			} catch (SQLException e) {
-
-				e.printStackTrace();
+			} catch (Exception e2) {
 			}
 		}
-		return list;
 
-	}
+		return list;
+	} // getList 끝
+
+	// 마감기한 지난 일 조회
+	public List<BoardVO> getOverList(String id){
+
+		List<BoardVO> list = new ArrayList<>();
+
+		String sql = "SELECT * FROM board\n" +
+					 "WHERE TO_DATE(regdate, 'yyyy-MM-dd') < TO_DATE(SYSDATE, 'yyyy-MM-dd') \n" +
+					 "AND check_yn = 'N' AND user_id = ?";
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		ResultSet rs = null;
+
+		try {
+
+			conn = DriverManager.getConnection(url, uid, upw);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+
+			rs = pstmt.executeQuery();
+
+			while(rs.next()) {
+				int bno = rs.getInt("bno");
+				String user_id = rs.getString("user_id");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String check_yn = rs.getString("check_yn");
+				Timestamp regdate = rs.getTimestamp("regdate");
+
+				BoardVO vo = new BoardVO(bno, user_id, title, content, check_yn, regdate);
+
+				list.add(vo);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+				rs.close();
+			} catch (Exception e2) {
+			}
+		}
+
+		return list;
+	} // OverList 끝
+
 
 	// 아직 하지 않은 일 개수
 	public int getCount(String id){

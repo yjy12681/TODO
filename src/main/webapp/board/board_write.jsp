@@ -20,7 +20,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>날짜 설정</td>
+				<td>기한 설정</td>
 				<td>
 					<input type="date" id="myDate" min="" name="regdate">
 					<script>
@@ -35,7 +35,7 @@
 				<td colspan="2">
 					<input type="submit" value="작성 완료" >
 					&nbsp;&nbsp;
-					<input type="button" value="목록" onclick="location.href='board_list.board'">
+					<input type="button" value="목록" onclick="location.href='/index.board'">
 				</td>
 			</tr>
 			
