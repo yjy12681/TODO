@@ -88,7 +88,22 @@ public class BoardController extends HttpServlet {
             } else {
                 response.sendRedirect("home.jsp");
             }
-        }
+            
+        //할일 상세 화면    
+        } else if (command.equals("/board/board_content.board")) {
+			
+			BoardVO vo = service.getContent(request, response);
+			request.setAttribute("vo", vo);
+			request.getRequestDispatcher("board_content.jsp").forward(request, response);
+			
+		//완료한 일 화면	
+        } else if (command.equals("/board/board_list_y.board")) {
+			
+        	List<BoardVO> list = service.getListY(request, response);
+			request.setAttribute("list", list);
+			request.getRequestDispatcher("board_list_y.jsp").forward(request, response);
+        } 
+
 
     }
 }

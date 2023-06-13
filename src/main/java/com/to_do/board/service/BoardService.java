@@ -21,6 +21,8 @@ public interface BoardService {
 
 	List<BoardVO> getOverList(HttpServletRequest request, HttpServletResponse response);
 
+	List<BoardVO> getListY(HttpServletRequest request, HttpServletResponse response);//완료한일 조회
+	
 	int getCount(String id);
 	
 	int getCount1(String id);

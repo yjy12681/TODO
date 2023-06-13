@@ -82,6 +82,9 @@
 					<c:choose>
 						<c:when test="${sessionScope.user_id != null }">
 							<li><a
+								href="<%= request.getContextPath()%>/board/board_list_y.board">완료한 일</a>
+							</li>
+							<li><a
 								href="<%= request.getContextPath()%>/user/user_mypage.user">나의정보관리</a>
 							</li>
 							<li><a href="<%= request.getContextPath()%>/user/user_logout.user"
