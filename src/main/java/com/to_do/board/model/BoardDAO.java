@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class BoardDAO {
 	private static BoardDAO instance = new BoardDAO();
 
@@ -124,46 +125,6 @@ public class BoardDAO {
 		}
 	}
 
-	// 임시 컨텐츠 가져오기
-	public BoardVO getContent(String bno){
-		BoardVO vo = null;
-
-		String sql = "SELECT * FROM board WHERE bno = ?"; // 할 일 목록
-
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		try {
-			conn = DriverManager.getConnection(url, uid, upw);
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, bno);
-
-			rs = pstmt.executeQuery();
-
-			if(rs.next()){
-				int bno2 = rs.getInt("bno");
-				String user_id = rs.getString("user_id");
-				String title = rs.getString("title");
-				String content = rs.getString("content");
-				String check_yn = rs.getString("check_yn");
-				Timestamp regdate = rs.getTimestamp("regdate");
-
-				vo = new BoardVO(bno2, user_id, title, content, check_yn, regdate);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				conn.close();
-				pstmt.close();
-				rs.close();
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		}
-		return vo;
-	}
 
 	//할일 목록 조회
 	public List<BoardVO> getList(String id){
@@ -263,6 +224,102 @@ public class BoardDAO {
 		return list;
 	} // OverList 끝
 
+	
+	//할일 상세보기
+	public BoardVO getContent(String bno) {
+		
+		BoardVO vo = null;
+		
+		String sql = "select * from board where bno = ?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			conn = DriverManager.getConnection(url, uid, upw);
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bno);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				int bno2 = rs.getInt("bno");
+				String user_id = rs.getString("user_id");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String check_yn = rs.getString("check_yn");
+				Timestamp regdate = rs.getTimestamp("regdate");
+				
+				vo = new BoardVO(bno2, user_id, title, content, check_yn, regdate);
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+				rs.close();
+			} catch (Exception e2) {
+			}
+		}
+		
+		return vo;
+	}
+	
+	//완료한일 조회
+		public List<BoardVO> getListY(){
+			
+			List<BoardVO> list = new ArrayList<>();
+			
+			String sql = "select * from board where check_yn = 'Y' order by bno desc";
+			
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			
+			try {
+				
+				conn = DriverManager.getConnection(url, uid, upw);
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				
+				
+				while(rs.next()) {
+					int bno = rs.getInt("bno");
+					String user_id = rs.getString("user_id");
+					String title = rs.getString("title");
+					String content = rs.getString("content");
+					String check_yn = rs.getString("check_yn");
+					Timestamp regdate = rs.getTimestamp("regdate");
+					
+					BoardVO vo = new BoardVO(bno, user_id, title, content, check_yn, regdate);
+					
+					list.add(vo);
+				}
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+					pstmt.close();
+					rs.close();
+				} catch (Exception e2) {
+				}
+			}
+			
+			
+			return list;
+		}
+		
 
 	// 아직 하지 않은 일 개수
 	public int getCount(String id){

@@ -132,4 +132,12 @@ public class BoardServiceImpl implements BoardService{
 		
 	}
 
+	@Override
+	public List<BoardVO> getListY(HttpServletRequest request, HttpServletResponse response) {
+		BoardDAO dao = BoardDAO.getInstance();
+		List<BoardVO> list = dao.getListY();
+		
+		return list;
+	}
+
 }
