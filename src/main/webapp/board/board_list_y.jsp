@@ -12,7 +12,6 @@
             <tr>
                 <th>제목</th>
                 <th>기한</th>
-                <th>수정</th>
                 <th>삭제</th>
             </tr>
             </thead>
@@ -22,8 +21,7 @@
             <tr>
                 <td><a href="/board/board_content.board?bno=${vo.bno }">${vo.title }</a></td>
                 <td><fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/></td>
-                <td>수정</td>
-                <td>삭제</td>
+                <td><a href="/board/board_delete.board?bno=${vo.bno}">삭제</a></td>
             </tr>
             </c:forEach>
             </tbody>

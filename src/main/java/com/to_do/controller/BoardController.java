@@ -65,7 +65,7 @@ public class BoardController extends HttpServlet {
 
             service.delete(request, response);
 
-            response.sendRedirect("/index.user");
+            response.sendRedirect("/index.board");
 
             // 로그인 시 홈 화면
         } else if (command.equals("/index.board")) {
