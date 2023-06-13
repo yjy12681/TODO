@@ -41,118 +41,106 @@ public class UserController extends HttpServlet {
     }
     
     protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");
 
 		String uri = request.getRequestURI();
-		System.out.println(uri);
-		String conPath = request.getContextPath();	
-		System.out.println(conPath);
+		String conPath = request.getContextPath();
 		String command = uri.substring(conPath.length());
 
 		System.out.println(command);
-		
+
 		UserService service = new UserServiceImpl();
 		HttpSession session = request.getSession();
-		
-		BoardService service1 = new BoardServiceImpl();
-		
-		if(command.equals("/user/user_join.user")) {//회원가입으로 이동
-			
+
+		if (command.equals("/user/user_join.user")) {//회원가입으로 이동
+
 			request.getRequestDispatcher("/user/user_join.jsp").forward(request, response);
-		}else if(command.equals("/user/user_login.user")) {//로그인 화면으로 이동
-			request.getRequestDispatcher("user_login.jsp").forward(request, response);
-		}else if(command.equals("/user/joinForm.user")) {//회원가입 완료
+
+			// 회원가입 처리
+		} else if (command.equals("/user/joinForm.user")) {
+
 			int result = service.join(request, response);
-			
-			if(result == 1) {//회원가입 실패
+
+			if (result == 1) {//회원가입 실패
 				request.setAttribute("msg", "중복된 아이디 입니다");
+
 				request.getRequestDispatcher("user_join.jsp").forward(request, response);
-			}else { //회원가입 성공
+			} else { //회원가입 성공
 				response.sendRedirect("user_login.user");
 			}
-		}else if(command.equals("/user/loginForm.user")) {
+
+			// 로그인 화면
+		} else if (command.equals("/user/user_login.user")) {
+
+			request.getRequestDispatcher("user_login.jsp").forward(request, response);
+
+			// 로그인 처리
+		} else if (command.equals("/user/loginForm.user")) {
+
 			UserVO vo = service.login(request, response);
-			
-			if(vo == null) {//로그인실패
+
+			if (vo == null) {//로그인실패
 				request.setAttribute("msg", "아이디 또는 비밀번호를 확인하세요");
 				request.getRequestDispatcher("user_login.jsp").forward(request, response);
-			}else {//로그인성공
+			} else {//로그인성공
 				session.setAttribute("user_id", vo.getId());
 				session.setAttribute("user_name", vo.getName());
-				//List<BoardVO> list= service1.getList(request, response);
-				//request.setAttribute("list", list);
-				//request.getRequestDispatcher("/index.jsp").forward(request, response);
-				response.sendRedirect("/index.user");
+				response.sendRedirect("/index.board");
 			}
-		}else if(command.equals("/user/user_mypage.user")) {
+
+			// 마이페이지 화면
+		} else if (command.equals("/user/user_mypage.user")) {
 			request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
-		}else if(command.equals("/user/user_modify.user")) {//회원정보수정으로 이동
+
+			// 회원 정보 수정 화면
+		} else if (command.equals("/user/user_modify.user")) {
 			UserVO vo = service.getInfo(request, response);
+
 			request.setAttribute("vo", vo);
-			
+
 			request.getRequestDispatcher("user_modify.jsp").forward(request, response);
-		}else if(command.equals("/user/user_update.user")) {//정보수정완료하기
+
+			// 회원 정보 수정 처리
+		} else if (command.equals("/user/user_update.user")) {
+
 			int result = service.updateInfo(request, response);
-			
-			if(result == 1) {
+
+			if (result == 1) {
+				// 이름 받아서 세션의 user_name 업데이트
 				String name = request.getParameter("name");
 				session.setAttribute("user_name", name);
+
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter out = response.getWriter();
-				out.println("<script>");				
-				out.println("alert('회원 정보가 변경되었습니다.')");				
+				out.println("<script>");
+				out.println("alert('회원 정보가 변경되었습니다.')");
 				out.println("location.href='user_mypage.user';");
 				out.println("</script>");
-			}else {
+			} else {
 				response.sendRedirect("user_modify.user");
 			}
-			
-		}else if(command.equals("/user/user_logout.user")) {//로그아웃 기능
+
+			// 로그 아웃
+		} else if (command.equals("/user/user_logout.user")) {
+
 			session.invalidate();
 			response.sendRedirect("user_login.user");
-		}else if(command.equals("/user/user_delete.user")) {//회원탈퇴기능
-			String id =request.getParameter("id");
-			System.out.println(id);
+
+			// 회원 탈퇴
+		} else if (command.equals("/user/user_delete.user")) {
+
 			int result = service.deleteInfo(request, response);
-			System.out.println(result);
-			if(result == 1) {
+
+			if (result == 1) {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter out = response.getWriter();
-				out.println("<script>");				
-				out.println("alert('회원 정보가 삭제되었습니다.')");				
+				out.println("<script>");
+				out.println("alert('회원 정보가 삭제되었습니다.')");
 				out.println("location.href='user_login.user';");
 				out.println("</script>");
-			}else {
-				
+			} else {
 				response.sendRedirect("user_mypage.user");
 			}
-		}else if(command.equals("/index.user")) {//홈화면으로 이동
-			String id = (String) session.getAttribute("user_id");
-			if (id != null) {//로그인한상태로 이동하면 리스트목록보여주고
-				List<BoardVO> list = service1.getList(id);
-				session.setAttribute("list", list);
-				
-				int count = service1.getCount(id);
-				if(count >= 0 ) {
-					BoardVO vo = new BoardVO();
-					vo.setnTotal(count);
-					session.setAttribute("count", count);
-				}
-				
-				int count1 = service1.getCount1(id);
-				if(count>= 0) {
-					BoardVO vo = new BoardVO();
-					vo.setnTotal(count1);
-					session.setAttribute("count1", count1);
-				}
-				
-			}else{
-				response.sendRedirect("user_login.user");
-				return;
-				//아니면 그냥 보내기
-			}
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
-    }
-    
+	}
 }

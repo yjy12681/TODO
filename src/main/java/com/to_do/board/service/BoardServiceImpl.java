@@ -14,7 +14,6 @@ import com.to_do.board.model.BoardVO;
 
 public class BoardServiceImpl implements BoardService{
 
-
 	// 일 작성
 	@Override
 	public void write(HttpServletRequest request, HttpServletResponse response) {
@@ -81,14 +80,15 @@ public class BoardServiceImpl implements BoardService{
 
 		return vo;
 	}
-	
+
+	// 할 일 목록
 	@Override
 	public List<BoardVO> getList(HttpServletRequest request, HttpServletResponse response) {
 
 		HttpSession session = request.getSession();
 
 		String id = (String) session.getAttribute("user_id");
-//		String id = request.getParameter("id");
+
 		BoardDAO dao = BoardDAO.getInstance();
 
 		List<BoardVO> list = dao.getList(id);
@@ -96,14 +96,21 @@ public class BoardServiceImpl implements BoardService{
 		return list;
 	}
 
+	// 마감 기한 지난 일
 	@Override
-	public List<BoardVO> getList(String id) {
+	public List<BoardVO> getOverList(HttpServletRequest request, HttpServletResponse response) {
+
+		HttpSession session = request.getSession();
+
+		String id = (String) session.getAttribute("user_id");
 
 		BoardDAO dao = BoardDAO.getInstance();
 
-		List<BoardVO> list = dao.getList(id);
+		List<BoardVO> list = dao.getOverList(id);
+
 		return list;
 	}
+
 	// 완료 X인 일 개수
 	@Override
 	public int getCount(String id) {
@@ -124,7 +131,5 @@ public class BoardServiceImpl implements BoardService{
 		return count;
 		
 	}
-
-
 
 }

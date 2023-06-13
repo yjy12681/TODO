@@ -24,10 +24,6 @@
 					<td><input type="text" name="phoneNumber"></td>
 				</tr>
 				<tr>
-					<td>생년월일</td>
-					<td><input type="date" name="birthdate" ></td>
-				</tr>
-				<tr>
 					<td>이메일</td>
 					<td><input type="email" name="email"></td>
 				</tr>

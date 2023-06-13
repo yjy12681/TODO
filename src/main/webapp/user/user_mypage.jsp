@@ -11,7 +11,7 @@
 			
 			<a href="user_modify.user">회원수정</a>						
 			<a href="user_logout.user">로그아웃</a>
-			<a href="user_delete.user?id=${sessionScope.user_id}">회원탈퇴</a>
+			<a href="user_delete.user">회원탈퇴</a>
 			
 	
 </section>

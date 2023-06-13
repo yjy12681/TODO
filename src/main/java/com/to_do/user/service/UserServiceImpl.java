@@ -19,25 +19,15 @@ public class UserServiceImpl implements UserService{
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String phoneNumber = request.getParameter("phoneNumber");
-		String birthdate = request.getParameter("birthdate");
 		String email = request.getParameter("email");
-		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Timestamp birthdate1 = null;
-		
-		try {
-			birthdate1 = new Timestamp(dateFormat.parse(birthdate).getTime());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+
 		UserDAO dao = UserDAO.getInstance();
 		int result = dao.idCheck(id);
-		System.out.println(result);
+
 		if(result == 1) {
 			return 1;
 		}else {
-			UserVO vo = new UserVO(id,pw,name,phoneNumber,birthdate1,email);
+			UserVO vo = new UserVO(id,pw,name,phoneNumber,email);
 			dao.join(vo);
 			return 0;
 		}
@@ -56,7 +46,8 @@ public class UserServiceImpl implements UserService{
 		
 		return vo;
 	}
-
+	
+	//회원 정보 가져오는 메서드
 	@Override
 	public UserVO getInfo(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
@@ -67,43 +58,36 @@ public class UserServiceImpl implements UserService{
 		
 		
 		return vo;
-	}
+	} // getInfo 끝
 
+	// 회원 정보 수정
 	@Override
 	public int updateInfo(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String phoneNumber = request.getParameter("phoneNumber");
-		String birthdate = request.getParameter("birthdate");
 		String email = request.getParameter("email");
-		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Timestamp birthdate1 = null;
-		
-		try {
-			birthdate1 = new Timestamp(dateFormat.parse(birthdate).getTime());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		UserVO vo = new UserVO(id,pw,name,phoneNumber,birthdate1,email);
+
+		UserVO vo = new UserVO(id,pw,name,phoneNumber,email);
 		UserDAO dao = UserDAO.getInstance();
 		
 		int result = dao.updateInfo(vo);
-		
-		
 		
 		return result;
 	}
 
 	@Override
 	public int deleteInfo(HttpServletRequest request, HttpServletResponse response) {
-		String id = request.getParameter("id");
-		
+
+		HttpSession session = request.getSession();
+
+		String id = (String) session.getAttribute("user_id");
+
 		UserDAO dao = UserDAO.getInstance();
 		
 		int result = dao.deleteInfo(id);
+
 		return result;
 	}
 }

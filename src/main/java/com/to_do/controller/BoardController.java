@@ -17,60 +17,78 @@ public class BoardController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	doAction(request,response);
+        doAction(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	doAction(request,response);
+        doAction(request, response);
     }
-    
+
     protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
 
-		String uri = request.getRequestURI();
-		String conPath = request.getContextPath();		
-		String command = uri.substring(conPath.length());
+        String uri = request.getRequestURI();
+        String conPath = request.getContextPath();
+        String command = uri.substring(conPath.length());
 
-		System.out.println(command);
+        System.out.println(command);
 
-		HttpSession session = request.getSession();
-		BoardService service = new BoardServiceImpl();
-		
-		if(command.equals("/index.user")) {
-			List<BoardVO> list = service.getList(request, response);
-			request.setAttribute("list", list);
-			
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-		// 일 작성 화면 처리
-		} else if (command.equals("/board/board_write.board")) {
+        HttpSession session = request.getSession();
+        BoardService service = new BoardServiceImpl();
 
-			request.getRequestDispatcher("board_write.jsp").forward(request, response);
-		// 일 등록
-		} else if (command.equals("/board/writeForm.board")) {
-			service.write(request, response);
+        // 일 작성 화면 처리
+        if (command.equals("/board/board_write.board")) {
 
-			response.sendRedirect("/index.user");
-		// 일 수정 화면	
-		} else if (command.equals("/board/board_modify.board")) {
+            request.getRequestDispatcher("board_write.jsp").forward(request, response);
+            // 일 등록
+        } else if (command.equals("/board/writeForm.board")) {
+            service.write(request, response);
 
-			BoardVO vo = service.getContent(request, response);
-			request.setAttribute("vo", vo);
+            response.sendRedirect("/index.board");
+            // 일 수정 화면
+        } else if (command.equals("/board/board_modify.board")) {
 
-			request.getRequestDispatcher("board_modify.jsp").forward(request, response);
-		// 	일 수정
-		} else if (command.equals("/board/board_update.board")) {
+            BoardVO vo = service.getContent(request, response);
+            request.setAttribute("vo", vo);
 
-			service.update(request, response);
+            request.getRequestDispatcher("board_modify.jsp").forward(request, response);
+            // 	일 수정
+        } else if (command.equals("/board/board_update.board")) {
 
-			response.sendRedirect("/index.user");
-		
-		// 일 삭제
-		} else if (command.equals("/board/board_delete.board")) {
+            service.update(request, response);
 
-			service.delete(request, response);
+            response.sendRedirect("/index.user");
 
-			response.sendRedirect("/index.user");
-		}
-	}
+            // 일 삭제
+        } else if (command.equals("/board/board_delete.board")) {
+
+            service.delete(request, response);
+
+            response.sendRedirect("/index.user");
+
+            // 로그인 시 홈 화면
+        } else if (command.equals("/index.board")) {
+
+            List<BoardVO> todo = service.getList(request, response);
+
+            List<BoardVO> over = service.getOverList(request, response);
+
+            request.setAttribute("todo", todo);
+            request.setAttribute("over", over);
+
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        } else if (command.equals("/home.board")) {
+
+            String id = (String) session.getAttribute("user_id");
+
+            if (id != null) {
+                response.sendRedirect("index.board");
+            } else {
+                response.sendRedirect("home.jsp");
+            }
+        }
+
+    }
 }
