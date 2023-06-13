@@ -113,7 +113,11 @@ public class BoardController extends HttpServlet {
             service.complete(request, response);
 
             response.sendRedirect("/index.board");
-
+            //아이디삭제후 아이디기준으로 작성한 리스트삭제
+        }else if(command.equals("/board/board_deleteAll.board")) {
+        	service.deleteAll(request, response);
+        	session.invalidate(); // 세션 삭제
+        	response.sendRedirect("/user/user_login.user");
         }
 
 
