@@ -325,7 +325,7 @@ public class BoardDAO {
 	public int getCount(String id){
 		int count = 0;
 
-		String sql = "SELECT COUNT(*) AS TOTAL FROM BOARD WHERE USER_ID = ? AND CHECK_YN = 'N'";
+		String sql = "SELECT COUNT(*) AS TOTAL FROM BOARD WHERE USER_ID = ? ";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;

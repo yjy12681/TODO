@@ -4,11 +4,12 @@
 <%@ include file="../include/header.jsp" %>
 
 <div class="container" align="right">
-    <table class="table table-bordered" style="max-width: 250px;">
+    <table class="table table-bordered" style="max-width: 400px;">
         <thead>
             <tr>
-                <th style="padding: 5px 10px; max-width: 5px;">미달성갯수: ${count }</th>
-                <th style="width: 110px; padding: 5px;">달성갯수: ${count1 }</th>
+                <th style="padding: 5px 10px; max-width: 10px;">리스트갯수: ${count }</th>
+                <th style="width: 200px; padding: 5px; ">달성갯수: ${count1 },달성율: <fmt:formatNumber value="${(count1/count)*100 }" maxFractionDigits="1" />%</th>
+
             </tr>
         </thead>
     </table>
