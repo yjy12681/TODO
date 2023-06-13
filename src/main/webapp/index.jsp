@@ -3,6 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../include/header.jsp" %>
 
+<div class="container" align="right">
+    <table class="table table-bordered" style="max-width: 250px;">
+        <thead>
+            <tr>
+                <th style="padding: 5px 10px; max-width: 5px;">미달성갯수: ${count }</th>
+                <th style="width: 110px; padding: 5px;">달성갯수: ${count1 }</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
 <div style="display: flex; justify-content: center;">
     <div style="margin-right: 100px;">
         <!-- 첫 번째 리스트 -->
