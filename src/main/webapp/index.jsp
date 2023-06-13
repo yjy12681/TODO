@@ -22,8 +22,8 @@
             <tr>
                 <td><a href="/board/board_content.board?bno=${todo.bno }">${todo.title }</a></td>
                 <td><fmt:formatDate value="${todo.regdate}" pattern="yyyy-MM-dd"/></td>
-                <td>수정</td>
-                <td>삭제</td>
+                <td><a href="/board/board_modify.board?bno=${todo.bno}">수정</a></td>
+                <td><a href="/board/board_delete.board?bno=${todo.bno}">삭제</a></td>
             </tr>
             </c:forEach>
             </tbody>
@@ -37,7 +37,6 @@
             <tr>
                 <th>제목</th>
                 <th>기한</th>
-                <th>수정</th>
                 <th>삭제</th>
             </tr>
             </thead>
@@ -47,8 +46,7 @@
             <tr>
                 <td><a href="/board/board_content.board?bno=${over.bno }">${over.title }</a></td>
                 <td><fmt:formatDate value="${over.regdate}" pattern="yyyy-MM-dd"/></td>
-                <td>수정</td>
-                <td>삭제</td>
+                <td><a href="/board/board_delete.board?bno=${over.bno}">삭제</a></td>
             </tr>
             </c:forEach>
             </tbody>

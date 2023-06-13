@@ -1,0 +1,93 @@
+
+d
+java:S1192š"FDefine a constant instead of duplicating this literal "title" 4 times.(‘¬ä‚8†ÎŠ˜‹1
+k
+java:S1192›"HDefine a constant instead of duplicating this literal "content" 4 times.(æ‰½Åÿÿÿÿÿ8‡ÎŠ˜‹1
+k
+java:S1192™"HDefine a constant instead of duplicating this literal "user_id" 4 times.(½äòñüÿÿÿÿ8‡ÎŠ˜‹1
+l
+java:S1192œ"IDefine a constant instead of duplicating this literal "check_yn" 4 times.(óúˆìıÿÿÿÿ8‡ÎŠ˜‹1
+f
+java:S1192"HDefine a constant instead of duplicating this literal "regdate" 4 times.(„îâê8‡ÎŠ˜‹1
+s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½äòñüÿÿÿÿ8‡ÎŠ˜‹1
+s	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óúˆìıÿÿÿÿ8‡ÎŠ˜‹1
+s	java:S117Ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½äòñüÿÿÿÿ8‡ÎŠ˜‹1
+s	java:S117Í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óúˆìıÿÿÿÿ8‡ÎŠ˜‹1
+s	java:S117ú"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½äòñüÿÿÿÿ8‡ÎŠ˜‹1
+s	java:S117ı"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óúˆìıÿÿÿÿ8‡ÎŠ˜‹1
+s	java:S117¨"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½äòñüÿÿÿÿ8‡ÎŠ˜‹1
+s	java:S117«"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óúˆìıÿÿÿÿ8‡ÎŠ˜‹1
+e
+java:S2259¨"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8²¹‚˜‹1
+e
+java:S2259Ù"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8²¹‚˜‹1
+f
+java:S2259Ş"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8²¹‚˜‹1
+^
+java:S2259ß"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8±¹‚˜‹1
+^
+java:S2259Û"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8²¹‚˜‹1
+e
+java:S2259€"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8”ÏŠ˜‹1
+d
+java:S2259\"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8”ÏŠ˜‹1
+e
+java:S2259¸"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8”ÏŠ˜‹1
+f
+java:S2259Š"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8±¹‚˜‹1
+e
+java:S2259]"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8”ÏŠ˜‹1
+^
+java:S2259‹"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8•ÏŠ˜‹1
+^
+java:S2259º"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8•ÏŠ˜‹1
+^
+java:S2259ª"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8•ÏŠ˜‹1
+d
+java:S2259="BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8•ÏŠ˜‹1
+d
+java:S2259x"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8•ÏŠ˜‹1
+f
+java:S2259"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8•ÏŠ˜‹1
+f
+java:S2259©"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8•ÏŠ˜‹1
+^
+java:S2259‚"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8•ÏŠ˜‹1
+e
+java:S2259y"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8•ÏŠ˜‹1
+e
+java:S2259İ"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8•ÏŠ˜‹1
+e
+java:S2259‰"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8•ÏŠ˜‹1
+f
+java:S2259¹"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8•ÏŠ˜‹1
+e
+java:S2259>"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8•ÏŠ˜‹1
+f
+java:S2259Ú"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8•ÏŠ˜‹1
+m
+java:S2095ó"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8²¹‚˜‹1
+m
+java:S2095¢"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8²¹‚˜‹1
+l
+java:S20950"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8•ÏŠ˜‹1
+l
+java:S2095P"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8•ÏŠ˜‹1
+m
+java:S2095Ã"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8•ÏŠ˜‹1
+m
+java:S2095ó"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8•ÏŠ˜‹1
+m
+java:S2095’"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8•ÏŠ˜‹1
+l
+java:S2095o"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8•ÏŠ˜‹1
+m
+java:S2095Ğ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8•ÏŠ˜‹1
+µ
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Û‚î8–ÏŠ˜‹1
+J
+java:S4925"-Remove this "Class.forName()", it is useless.(ùíÄé8˜ÏŠ˜‹1
+F	java:S108«")Either remove or fill this block of code.(Á¡ÆÃ8œÏŠ˜‹1
+F	java:S108Ü")Either remove or fill this block of code.(Á¡ÆÃ8ÏŠ˜‹1
+F	java:S108Œ")Either remove or fill this block of code.(Á¡ÆÃ8ÏŠ˜‹1
+F	java:S108»")Either remove or fill this block of code.(Á¡ÆÃ8ŸÏŠ˜‹1

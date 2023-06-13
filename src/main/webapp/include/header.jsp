@@ -75,12 +75,11 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 
-					<li><a href="<%= request.getContextPath()%>/home.board">홈</a>
-					</li>
-					<li><a href="<%= request.getContextPath()%>/board/board_write.board">할일작성하러가기</a></li>
 
 					<c:choose>
 						<c:when test="${sessionScope.user_id != null }">
+							<li><a href="<%= request.getContextPath()%>/home.board">전체 목록</a></li>
+							<li><a href="<%= request.getContextPath()%>/board/board_write.board">할일작성하러가기</a></li>
 							<li><a
 								href="<%= request.getContextPath()%>/board/board_list_y.board">완료한 일</a>
 							</li>
@@ -92,6 +91,7 @@
 						</c:when>
 
 						<c:otherwise>
+							<li><a href="<%= request.getContextPath()%>/home.board">홈</a></li>
 							<li><a
 								href="<%= request.getContextPath()%>/user/user_login.user">로그인</a>
 							</li>

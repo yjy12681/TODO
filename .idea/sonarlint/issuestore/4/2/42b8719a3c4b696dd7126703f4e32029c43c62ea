@@ -1,0 +1,11 @@
+
+_
+java:S2259î"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ
+^
+java:S2259í"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ
+f
+java:S2095ä"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù
+¯
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ÁÇæÅ
+C
+java:S4925"-Remove this "Class.forName()", it is useless.(ùíÄé

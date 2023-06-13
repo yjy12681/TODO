@@ -132,6 +132,7 @@ public class UserController extends HttpServlet {
 			int result = service.deleteInfo(request, response);
 
 			if (result == 1) {
+				session.invalidate(); // 세션 삭제
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter out = response.getWriter();
 				out.println("<script>");
