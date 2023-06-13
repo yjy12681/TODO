@@ -140,4 +140,16 @@ public class BoardServiceImpl implements BoardService{
 		return list;
 	}
 
+	@Override
+	public void deleteAll(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		
+		String id = (String)session.getAttribute("user_id");
+		
+		BoardDAO dao = BoardDAO.getInstance();
+		
+		dao.deleteAll(id);
+		
+	}
+
 }

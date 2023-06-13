@@ -393,4 +393,30 @@ public class BoardDAO {
 	}
 
 
+	public void deleteAll(String id) {
+		String sql = "DELETE FROM BOARD WHERE USER_ID = ?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DriverManager.getConnection(url,uid,upw);
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				conn.close();
+				pstmt.close();
+				
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+		}
+		
+	}
 }

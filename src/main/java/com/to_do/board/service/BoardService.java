@@ -27,5 +27,5 @@ public interface BoardService {
 	
 	int getCount1(String id);
 
-
+	void deleteAll(HttpServletRequest request, HttpServletResponse response); //아이디 기준으로 리스트삭제
 }

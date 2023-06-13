@@ -10,6 +10,7 @@ import com.to_do.board.service.BoardServiceImpl;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.spi.AbstractResourceBundleProvider;
 
 @WebServlet("*.board")
 public class BoardController extends HttpServlet {
@@ -106,7 +107,12 @@ public class BoardController extends HttpServlet {
         	List<BoardVO> list = service.getListY(request, response);
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("board_list_y.jsp").forward(request, response);
-        } 
+			//회원탈퇴 성공후 아이디기준으로 작성리스트 삭제
+        } else if(command.equals("/board/board_deleteAll.board")) {
+        	service.deleteAll(request, response);
+        	session.invalidate(); // 세션 삭제
+        	response.sendRedirect("/user/user_login.user");
+        }
 
 
     }

@@ -132,13 +132,13 @@ public class UserController extends HttpServlet {
 			int result = service.deleteInfo(request, response);
 
 			if (result == 1) {
-				session.invalidate(); // 세션 삭제
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter out = response.getWriter();
 				out.println("<script>");
 				out.println("alert('회원 정보가 삭제되었습니다.')");
-				out.println("location.href='user_login.user';");
+				out.println("location.href='/board/board_deleteAll.board';");
 				out.println("</script>");
+				
 			} else {
 				response.sendRedirect("user_mypage.user");
 			}
