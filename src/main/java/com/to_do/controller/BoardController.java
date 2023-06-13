@@ -58,7 +58,7 @@ public class BoardController extends HttpServlet {
 
             service.update(request, response);
 
-            response.sendRedirect("/index.user");
+            response.sendRedirect("/index.board");
 
             // 일 삭제
         } else if (command.equals("/board/board_delete.board")) {
@@ -106,7 +106,15 @@ public class BoardController extends HttpServlet {
         	List<BoardVO> list = service.getListY(request, response);
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("board_list_y.jsp").forward(request, response);
-        } 
+
+        // 완료 처리
+        }  else if (command.equals("/board/board_complete.board")) {
+
+            service.complete(request, response);
+
+            response.sendRedirect("/index.board");
+
+        }
 
 
     }

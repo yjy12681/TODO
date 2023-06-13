@@ -9,14 +9,7 @@
 
         <input type="hidden" name="bno" value="${vo.bno}">
         <table border="1" width="500">
-            <%--			화면에서 보여질 필요는 없지만, 데이터는 form으로 전송해야할 때
-                            input태그의 hidden 속성을 쓴다  -> 중요 !!!!!!!!  --%>
-            <%--
-            <tr>
-                <td>글 번호</td>
-                <td>${vo.bno}</td>
-            </tr>
-            --%>
+
             <tr>
                 <td>할 일</td>
                 <td>
@@ -37,15 +30,14 @@
                     <script>
                         var today = new Date().toISOString().split('T')[0];
 
-                        document.getElementById("myDate").value = ${ vo.regdate };
-                        document.getElementById("myDate").min = today;
+                        document.getElementById("myDate").value = today;
                     </script>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="수정 하기" onclick="location.href='board_content.board'">&nbsp;&nbsp;
-                    <input type="button" value="목록" onclick="location.href='board_list.board'">
+                    <input type="submit" value="수정 하기">&nbsp;&nbsp;
+                    <input type="button" value="목록" onclick="location.href='/index.board'">
                 </td>
             </tr>
 

@@ -27,5 +27,6 @@ public interface BoardService {
 	
 	int getCount1(String id);
 
+	void complete(HttpServletRequest request, HttpServletResponse response); // 완료 처리
 
 }
