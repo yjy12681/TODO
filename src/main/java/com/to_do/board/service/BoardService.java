@@ -29,4 +29,5 @@ public interface BoardService {
 
 	void complete(HttpServletRequest request, HttpServletResponse response); // 완료 처리
 
+	void deleteAll(HttpServletRequest request, HttpServletResponse response); //아이디 기준으로 리스트삭제
 }
