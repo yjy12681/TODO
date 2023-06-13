@@ -26,6 +26,7 @@
                 <th>기한</th>
                 <th>수정</th>
                 <th>삭제</th>
+                <th>완료</th>
             </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@
                 <td><fmt:formatDate value="${todo.regdate}" pattern="yyyy-MM-dd"/></td>
                 <td><a href="/board/board_modify.board?bno=${todo.bno}">수정</a></td>
                 <td><a href="/board/board_delete.board?bno=${todo.bno}">삭제</a></td>
+                <td><a href="/board/board_complete.board?bno=${todo.bno}">완료</a></td>
             </tr>
             </c:forEach>
             </tbody>

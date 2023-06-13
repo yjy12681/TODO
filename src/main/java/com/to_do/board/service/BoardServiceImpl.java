@@ -140,4 +140,12 @@ public class BoardServiceImpl implements BoardService{
 		return list;
 	}
 
+	@Override
+	public void complete(HttpServletRequest request, HttpServletResponse response) {
+		String bno = request.getParameter("bno");
+		BoardDAO dao = BoardDAO.getInstance();
+
+		dao.complete(bno);
+	}
+
 }

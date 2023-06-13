@@ -392,5 +392,32 @@ public class BoardDAO {
 		return count;
 	}
 
+	// 완료 처리
+	public void complete(String bno){
+
+		String sql = "UPDATE board SET check_yn = 'Y' WHERE bno = ?";
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DriverManager.getConnection(url, uid, upw);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bno);
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 
 }
