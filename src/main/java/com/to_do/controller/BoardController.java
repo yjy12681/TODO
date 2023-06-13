@@ -73,7 +73,11 @@ public class BoardController extends HttpServlet {
             List<BoardVO> todo = service.getList(request, response);
 
             List<BoardVO> over = service.getOverList(request, response);
-
+            String id = (String)session.getAttribute("user_id");
+            int count =service.getCount(id);
+            int count1 = service.getCount1(id);
+            request.setAttribute("count", count);
+            request.setAttribute("count1", count1);
             request.setAttribute("todo", todo);
             request.setAttribute("over", over);
 
