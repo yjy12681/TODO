@@ -3,8 +3,8 @@
 
 <section>
 	<div align="center">
-	
-		<h3>회원가입</h3>
+		<br><br>
+		<h3>회원가입</h3><br>
 		<form action="joinForm.user" method="post">
 			<table border="1">
 				<tr>
@@ -32,9 +32,11 @@
 			</table>
 			
 			<div style="color: red">${msg }</div>
-			
-			<input type="submit" value="가입">
-			<input type="reset" value="입력정보지우기" onclick="location.href='user_join.user'">
+			<br>
+			<input type="submit" value="가입"
+			       style="border:none; border-radius:5px; background:#15A34A; color:#fff;  height:30px; font-size:1em; padding:0.2em 0.5em;">&nbsp;&nbsp;
+			<input type="reset" value="정보 초기화" onclick="location.href='user_join.user'"
+			       style="border:none; border-radius:5px; background:#15A34A; color:#fff;  height:30px; font-size:1em; padding:0.2em 0.5em;">
 		
 		</form>
 		

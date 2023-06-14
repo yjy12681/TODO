@@ -31,15 +31,15 @@
 					</script>
 				</td>
 			</tr>
-			<tr>
-				<td colspan="2">
-					<input type="submit" value="작성 완료" >
-					&nbsp;&nbsp;
-					<input type="button" value="목록" onclick="location.href='/index.board'">
-				</td>
-			</tr>
 			
 		</table>
+			<br>
+				<input type="submit" value="작성 완료"
+				       style="border:none; border-radius:5px; background:#15A34A; color:#fff;  height:30px; font-size:1em; padding:0.2em 0.5em;" >&nbsp;&nbsp;
+				<input type="button" value="목록" onclick="location.href='/index.board'"
+				       style="border:none; border-radius:5px; background:#15A34A; color:#fff;  height:30px; font-size:1em; padding:0.2em 0.5em;">
+				
+		
 	</form>
 	
 </div>
