@@ -273,11 +273,11 @@ public class BoardDAO {
 	}
 	
 	//완료한일 조회
-		public List<BoardVO> getListY(){
+		public List<BoardVO> getListY(String id){
 			
 			List<BoardVO> list = new ArrayList<>();
 			
-			String sql = "select * from board where check_yn = 'Y' order by bno desc";
+			String sql = "select * from board where check_yn = 'Y' AND USER_ID = ? order by bno desc";
 			
 			Connection conn = null;
 			PreparedStatement pstmt = null;
@@ -288,6 +288,7 @@ public class BoardDAO {
 				
 				conn = DriverManager.getConnection(url, uid, upw);
 				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
 				rs = pstmt.executeQuery();
 				
 				

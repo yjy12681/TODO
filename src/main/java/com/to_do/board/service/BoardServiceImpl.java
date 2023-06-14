@@ -134,8 +134,10 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<BoardVO> getListY(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("user_id");
 		BoardDAO dao = BoardDAO.getInstance();
-		List<BoardVO> list = dao.getListY();
+		List<BoardVO> list = dao.getListY(id);
 		
 		return list;
 	}
