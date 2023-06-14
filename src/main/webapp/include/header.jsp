@@ -72,6 +72,7 @@
 	height: 130px;
 	text-align: center;
 	padding-bottom: 15px;
+	padding-top: 30px;
 }
 #home_comment{
 	font-size: 20px;
@@ -79,6 +80,7 @@
 	text-align: center;
 	width: 400px;
 	padding-bottom: 20px;
+	padding-top: 25px;
 }
 #home_login_button{
 	background-color:#DF483A;
@@ -89,19 +91,25 @@
 a {
 	text-decoration: none;
 }
+a.focus {
+	text-decoration: none;
+}
 section{
 	height: 60vh;
 }
 #index_section{
 	display: flex;
-	justify-content: space-evenly;
 	flex-direction: column;
+}
+#index_section > div:not(:last-child) {
+	margin-bottom: 50px; /* 간격을 조절할 값으로 변경하세요 */
 }
 .button-container{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	height: 60px;
 }
 .button-container a {
 	background-color: #15A34A;
@@ -110,9 +118,10 @@ section{
 	padding: 10px;
 	text-decoration: none;
 	color: whitesmoke;
-	font-size: 15px;
+	font-size: 25px;
 	text-align: center;
 }
+
 </style>
 
 
@@ -123,7 +132,7 @@ section{
 	<div class="brand">To Do List</div>
 	<div class="address-bar">오늘의 할일을 내일로 미루지 말자</div>
 
-	<nav class="navbar navbar-default abc" role="navigation">
+	<nav class="navbar navbar-default abc" role="navigation" style="background-color: rgba(38,100,207, 0.1)">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"

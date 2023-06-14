@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
-<div id="home_container">
+<div id="home_container" >
     <div id="home_main">
         일과 생활을
         <br>

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../include/header.jsp" %>
-<section>
+<section style="background-color: rgba(249, 232, 213, 0.2);">
 <div style="display: flex; justify-content: center;">
     <div style="margin-right: 100px;">
         <!-- 첫 번째 리스트 -->

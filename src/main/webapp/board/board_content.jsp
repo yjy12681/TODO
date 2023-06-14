@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../include/header.jsp" %>
-<section>
+<section style="background-color: rgba(249, 232, 213, 0.2);">
     <div align="center" class="div_center">
         <h3>할 일 상세보기</h3>
         <hr>
