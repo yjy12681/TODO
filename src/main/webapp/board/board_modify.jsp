@@ -11,21 +11,21 @@
         <table border="1" width="500">
 
             <tr>
-                <td>할 일</td>
-                <td>
+                <td style="text-align: center">할 일</td>
+                <td style="text-align: center">
                     <input type="text" name="title" value="${vo.title}">
                 </td>
             </tr>
             <tr>
-                <td>상세 내용</td>
-                <td>
+                <td style="text-align: center">상세 내용</td>
+                <td style="text-align: center">
 					<textarea rows="10" style="width: 95%;" name="content">${vo.content}
                     </textarea>
                 </td>
             </tr>
             <tr>
-                <td>날짜 설정</td>
-                <td>
+                <td style="text-align: center">날짜 설정</td>
+                <td style="text-align: center">
                     <input type="date" id="myDate" min="" name="regdate">
                     <script>
                         var today = new Date().toISOString().split('T')[0];
@@ -34,14 +34,14 @@
                     </script>
                 </td>
             </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="수정 하기">&nbsp;&nbsp;
-                    <input type="button" value="목록" onclick="location.href='/index.board'">
-                </td>
-            </tr>
+
 
         </table>
+        <br>
+        <input type="submit" value="수정 하기"
+               style="border:none; border-radius:5px; background:#15A34A; color:#fff;  height:30px; font-size:1em; padding:0.2em 0.5em;" >&nbsp;&nbsp;
+        <input type="button" value="목록" onclick="location.href='/index.board'"
+               style="border:none; border-radius:5px; background:#15A34A; color:#fff;  height:30px; font-size:1em; padding:0.2em 0.5em;">
     </form>
 
 </div>

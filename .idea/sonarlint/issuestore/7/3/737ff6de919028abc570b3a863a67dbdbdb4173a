@@ -1,0 +1,38 @@
+
+o
+java:S11920"MDefine a constant instead of duplicating this literal "/index.board" 6 times.(âÚÅÃÿÿÿÿÿ8©­±¿‹1
+
+java:S1989"bHandle the following exceptions that could be thrown by "doAction": ServletException, IOException.(áÔ“ò8¸­±¿‹1
+
+java:S1989"bHandle the following exceptions that could be thrown by "doAction": ServletException, IOException.(áÔ“ò8¹­±¿‹1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ûéä¬øÿÿÿÿ8¢øÁ‹1
+‰
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ï‡‹ê8º­±¿‹1
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8º­±¿‹1
+}
+java:S1989+"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(¦Êï8»­±¿‹1
+u
+java:S19890"SHandle the following exception that could be thrown by "sendRedirect": IOException.(âÚÅÃÿÿÿÿÿ8»­±¿‹1
+ƒ
+java:S19897"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(‰Ñá­úÿÿÿÿ8¼­±¿‹1
+u
+java:S1989="SHandle the following exception that could be thrown by "sendRedirect": IOException.(âÚÅÃÿÿÿÿÿ8¼­±¿‹1
+u
+java:S1989D"SHandle the following exception that could be thrown by "sendRedirect": IOException.(âÚÅÃÿÿÿÿÿ8¼­±¿‹1
+ƒ
+java:S1989T"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ŠÓğ¿øÿÿÿÿ8½­±¿‹1
+u
+java:S1989["SHandle the following exception that could be thrown by "sendRedirect": IOException.(¿ö½Æûÿÿÿÿ8§øÁ‹1
+u
+java:S1989]"SHandle the following exception that could be thrown by "sendRedirect": IOException.(®ş¡Ôøÿÿÿÿ8§øÁ‹1
+ƒ
+java:S1989e"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(¨Ø”¿üÿÿÿÿ8§øÁ‹1
+ƒ
+java:S1989l"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(›Îòøÿÿÿÿ8§øÁ‹1
+u
+java:S1989s"SHandle the following exception that could be thrown by "sendRedirect": IOException.(âÚÅÃÿÿÿÿÿ8§øÁ‹1
+p
+java:S1989x"SHandle the following exception that could be thrown by "sendRedirect": IOException.(¸Êä‘8¨øÁ‹1
+u
+java:S1989~"SHandle the following exception that could be thrown by "sendRedirect": IOException.(âÚÅÃÿÿÿÿÿ8¨øÁ‹1

@@ -8,20 +8,20 @@
 	<form action="writeForm.board" method="post">
 		<table border="1" width="500">
 			<tr>
-				<td>할 일</td>
-				<td>
+				<td style="text-align: center">할 일</td>
+				<td style="text-align: center">
 					<input type="text" name="title" required>
 				</td>
 			</tr>
 			<tr>
-				<td>상세 내용</td>
+				<td style="text-align: center">상세 내용</td>
 				<td>
 					<textarea rows="10" style="width: 95%;" name="content" ></textarea>
 				</td>
 			</tr>
 			<tr>
-				<td>기한 설정</td>
-				<td>
+				<td style="text-align: center">기한 설정</td>
+				<td style="text-align: center">
 					<input type="date" id="myDate" min="" name="regdate">
 					<script>
 						var today = new Date().toISOString().split('T')[0];

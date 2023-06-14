@@ -1,0 +1,46 @@
+
+
+java:S1989#"bHandle the following exceptions that could be thrown by "doAction": ServletException, IOException.(áÔ“ò8Ìê‘‹1
+
+java:S1989("bHandle the following exceptions that could be thrown by "doAction": ServletException, IOException.(áÔ“ò8Ìê‘‹1
+t
+java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(Ûéä¬øÿÿÿÿ8Ìê‘‹1
+‰
+java:S1989,"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ï‡‹ê8óì£”‹1
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(Ğ¦÷8óì£”‹1
+ƒ
+java:S19899"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(İÌö¥üÿÿÿÿ8óì£”‹1
+ƒ
+java:S1989C"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(Ñ±ù¸şÿÿÿÿ8ôì£”‹1
+u
+java:S1989E"SHandle the following exception that could be thrown by "sendRedirect": IOException.(“‘âíüÿÿÿÿ8ôì£”‹1
+~
+java:S1989K"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(“Ì…î8ôì£”‹1
+~
+java:S1989T"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(“Ì…î8õì£”‹1
+u
+java:S1989X"SHandle the following exception that could be thrown by "sendRedirect": IOException.(âÚÅÃÿÿÿÿÿ8õì£”‹1
+ƒ
+java:S1989]"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(Õ«É»ùÿÿÿÿ8õì£”‹1
+ƒ
+java:S1989e"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(€¿İ£øÿÿÿÿ8õì£”‹1
+r
+java:S1989r"PHandle the following exception that could be thrown by "getWriter": IOException.(ïô†úÿÿÿÿ8öì£”‹1
+p
+java:S1989x"SHandle the following exception that could be thrown by "sendRedirect": IOException.(¸’°Å8öì£”‹1
+u
+java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.(“‘âíüÿÿÿÿ8öì£”‹1
+s
+java:S1989ˆ"PHandle the following exception that could be thrown by "getWriter": IOException.(ïô†úÿÿÿÿ8£Ş¿¡‹1
+v
+java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.( Àÿ¼ùÿÿÿÿ8öì£”‹1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8÷ì£”‹1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8÷ì£”‹1
+\
+java:S1128":Remove this unused import 'com.to_do.board.model.BoardVO'.(Ì±üÿÿÿÿ8÷ì£”‹1
+c
+java:S1128"ARemove this unused import 'com.to_do.board.service.BoardService'.(”Ç–°şÿÿÿÿ8÷ì£”‹1
+a
+java:S1128"ERemove this unused import 'com.to_do.board.service.BoardServiceImpl'.(¥Ú28÷ì£”‹1

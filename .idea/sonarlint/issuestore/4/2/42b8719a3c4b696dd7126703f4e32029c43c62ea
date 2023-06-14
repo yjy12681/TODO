@@ -1,11 +1,49 @@
 
-_
-java:S2259î"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ
 ^
-java:S2259í"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ
+java:S2259‡"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8ý’¿¡‹1
+e
+java:S2259="CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8ý’¿¡‹1
+]
+java:S2259>"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8ý’¿¡‹1
+e
+java:S2259…"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8ý’¿¡‹1
+d
+java:S2259_"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8ý’¿¡‹1
 f
-java:S2095ä"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù
+java:S2259î"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8ý’¿¡‹1
+_
+java:S2259®"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ
+e
+java:S2259`"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8þ’¿¡‹1
+d
+java:S2259<"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8þ’¿¡‹1
+^
+java:S2259Ð"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ
+e
+java:S2259í"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8ý’¿¡‹1
+f
+java:S2259Ñ"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8ý’¿¡‹1
+e
+java:S2259­"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8ý’¿¡‹1
+f
+java:S2259†"CA "NullPointerException" could be thrown; "pstmt" is nullable here.(üÒ‡¿ÿÿÿÿÿ8ý’¿¡‹1
+^
+java:S2259¯"@A "NullPointerException" could be thrown; "rs" is nullable here.(ÅÌ”Ù8þ’¿¡‹1
+l
+java:S2095Q"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8þ’¿¡‹1
+l
+java:S2095t"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8þ’¿¡‹1
+m
+java:S2095ä"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8þ’¿¡‹1
+e
+java:S2095,"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù
+m
+java:S2095Â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8þ’¿¡‹1
+m
+java:S2095›"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ä×Óù8þ’¿¡‹1
 ¯
 java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ÁÇæÅ
 C
 java:S4925"-Remove this "Class.forName()", it is useless.(ùíÄé
+K
+java:S1128"/Remove this unused import 'java.sql.Timestamp'.(èò½+8‡“¿¡‹1
