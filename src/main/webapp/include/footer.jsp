@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; By Park 2018.XX.XX~</p>
+                    <p>To Do List : 유재영, 석이서, 장성욱</p>
                 </div>
             </div>
         </div>

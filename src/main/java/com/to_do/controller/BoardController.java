@@ -83,7 +83,7 @@ public class BoardController extends HttpServlet {
 
             request.getRequestDispatcher("index.jsp").forward(request, response);
 
-        } else if (command.equals("/home.board")) {
+        } else if (command.equals("/home.board") || command.equals("/")) {
 
             String id = (String) session.getAttribute("user_id");
 
@@ -118,8 +118,13 @@ public class BoardController extends HttpServlet {
         	service.deleteAll(request, response);
         	session.invalidate(); // 세션 삭제
         	response.sendRedirect("/user/user_login.user");
-        }
 
+            //전체 삭제 후 다시 홈 화면으로
+        } else if(command.equals("/board/delete_allList.board")){
+
+            service.deleteAll(request, response);
+            response.sendRedirect("/index.board");
+        }
 
     }
 }
