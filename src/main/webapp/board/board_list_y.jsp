@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../include/header.jsp" %>
-
+<section>
 <div style="display: flex; justify-content: center;">
     <div style="margin-right: 100px;">
         <!-- 첫 번째 리스트 -->
@@ -29,6 +29,6 @@
     </div>
   
 </div>
-
+</section>
 
     <%@ include file="../include/footer.jsp" %>

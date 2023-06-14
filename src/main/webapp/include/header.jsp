@@ -46,7 +46,73 @@
 	width: 100%;
 	z-index: 10;
 }
-
+@font-face {
+	font-family: 'HANAMDAUM';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'MBC1961GulimM';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+#home_container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+#home_main{
+	font-family: 'HANAMDAUM';
+	font-size: 45px;
+	line-height: 120%;
+	width: 300px;
+	height: 130px;
+	text-align: center;
+	padding-bottom: 15px;
+}
+#home_comment{
+	font-size: 20px;
+	font-family: 'MBC1961GulimM';
+	text-align: center;
+	width: 400px;
+	padding-bottom: 20px;
+}
+#home_login_button{
+	background-color:#DF483A;
+	border-radius: 5px;
+	text-decoration: none;
+	padding: 10px;
+}
+a {
+	text-decoration: none;
+}
+section{
+	height: 60vh;
+}
+#index_section{
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+.button-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.button-container a {
+	background-color: #15A34A;
+	border-radius: 5px;
+	margin-right: 15px;
+	padding: 10px;
+	text-decoration: none;
+	color: whitesmoke;
+	font-size: 15px;
+	text-align: center;
+}
 </style>
 
 
