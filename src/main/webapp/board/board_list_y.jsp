@@ -19,9 +19,9 @@
             <!-- 첫 번째 리스트의 항목들 -->
             <c:forEach var="vo" items="${list }">
             <tr>
-                <td><a href="/board/board_content.board?bno=${vo.bno }">${vo.title }</a></td>
-                <td><fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/></td>
-                <td><a href="/board/board_delete.board?bno=${vo.bno}">삭제</a></td>
+                <td width="150"><a href="/board/board_content.board?bno=${vo.bno }">${vo.title }</a></td>
+                <td width="150"><fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/></td>
+                <td width="100"><a href="/board/board_delete.board?bno=${vo.bno}">삭제</a></td>
             </tr>
             </c:forEach>
             </tbody>
